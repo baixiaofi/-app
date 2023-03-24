@@ -4,7 +4,7 @@ import router from '@/router'
 // 引入路由
 import store from '@/store';
 
-import TypeNav from '@/pages/Home/TypeNav';
+import TypeNav from '@/components/TypeNav';
 Vue.component(TypeNav.name,TypeNav)
 Vue.config.productionTip = false
  
