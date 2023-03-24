@@ -1,6 +1,8 @@
-import axios  from 'axios'
+import axios from 'axios'
 import nprogress from 'nprogress';
-console.log(nprogress)
+import "nprogress/nprogress.css"; 
+
+// console.log(nprogress)start代表开始done代表结束
 const requests = axios.create({
     // 配置对象
     // 基础路径，发请求的时候，路径当中会出现api
@@ -11,7 +13,7 @@ const requests = axios.create({
 // 请求拦截器：在发请求之前，请求拦截器可以检测到，可以再请求发出之前做一些事情
 requests.interceptors.request.use((config) => {
 
-    
+    nprogress.start();
     return config
 })
 
@@ -19,6 +21,7 @@ requests.interceptors.request.use((config) => {
 // 相应拦截器
 requests.interceptors.response.use((res) => {
     // 成功的回调函数：服务器相应数据回来以后，响应拦截器可以检测到，可以做一些事情
+    nprogress.done();
     return res.data;
 }, (error) => {
     // 服务器响应失败的回调函数
