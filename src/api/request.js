@@ -10,6 +10,7 @@ const requests = axios.create({
 // 请求拦截器：在发请求之前，请求拦截器可以检测到，可以再请求发出之前做一些事情
 requests.interceptors.request.use((config) => {
 
+    
     return config
 })
 // 相应拦截器
