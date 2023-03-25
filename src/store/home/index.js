@@ -4,7 +4,7 @@ const mutations = {};
 const actions = {
     async  categoryList(){
     
-          let result =await reqgetCategoryList();
+          let result = await reqgetCategoryList();
           console.log(result)
     }
 };
